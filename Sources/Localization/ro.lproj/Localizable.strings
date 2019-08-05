@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  STPhotoDetails
+
+  Created by Dimitri Strauneanu on 27/07/2019.
+  Copyright © 2019 Streetography. All rights reserved.
+*/
+
+"STPhotoDetails.collection.title" = "Colecție";
+"STPhotoDetails.location.title" = "Locație";
+"STPhotoDetails.block.title" = "Bloc";
+"STPhotoDetails.neighborhood.title" = "Cartier";
+"STPhotoDetails.city.title" = "Oraș";
+"STPhotoDetails.county.title" = "Județ";
+"STPhotoDetails.state.title" = "Stat/Regiune";
+"STPhotoDetails.country.title" = "Țară";
+
+"STPhotoComments.empty.state.text" = "Nu a fost adăugat încă niciun comentariu.";

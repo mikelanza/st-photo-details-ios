@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  STPhotoDetails
+
+  Created by Dimitri Strauneanu on 27/07/2019.
+  Copyright © 2019 Streetography. All rights reserved.
+*/
+
+"STPhotoDetails.collection.title" = "Collection";
+"STPhotoDetails.location.title" = "Location";
+"STPhotoDetails.block.title" = "Block";
+"STPhotoDetails.neighborhood.title" = "Neighborhood";
+"STPhotoDetails.city.title" = "City";
+"STPhotoDetails.county.title" = "County";
+"STPhotoDetails.state.title" = "State/Region";
+"STPhotoDetails.country.title" = "Country";
+
+"STPhotoComments.empty.state.text" = "No comments have been added yet.";

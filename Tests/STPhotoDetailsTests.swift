@@ -10,7 +10,5 @@ import XCTest
 @testable import STPhotoDetails
 
 class STPhotoDetailsTests: XCTestCase {
-    func testFrameworkName() {
-        XCTAssertEqual(STPhotoDetails.name, "STPhotoDetails")
-    }
+    
 }

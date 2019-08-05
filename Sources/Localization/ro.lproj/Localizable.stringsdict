@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>STPhotoDetails.comment.count</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@comment_count@</string>
+		<key>comment_count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>zero</key>
+			<string>Niciun comentariu</string>
+			<key>one</key>
+			<string>Un comentariu</string>
+			<key>other</key>
+			<string>%d comentarii</string>
+		</dict>
+	</dict>
+	<key>STPhotoDetails.like.count</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@like_count@</string>
+		<key>like_count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>zero</key>
+			<string>Niciun like</string>
+			<key>one</key>
+			<string>Un like</string>
+			<key>other</key>
+			<string>%d like-uri</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
