@@ -1,0 +1,8 @@
+author: Streetography
+author_url: https://twitter.com/rahulkatariya91
+github_url: https://github.com/mikelanza/STPhotoDetails
+root_url: https://mikelanza.github.io/STPhotoDetails/
+module: STPhotoDetails
+output: docs
+theme: fullwidth
+xcodebuild_arguments: [-workspace, 'STPhotoDetails.xcworkspace', -scheme, 'STPhotoDetails-iOS']
