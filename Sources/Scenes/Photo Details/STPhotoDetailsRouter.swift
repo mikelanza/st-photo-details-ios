@@ -13,13 +13,17 @@
 import UIKit
 
 @objc protocol STPhotoDetailsRoutingLogic {
-    func popViewController()
+    func removeViewController()
 }
 
 class STPhotoDetailsRouter: NSObject, STPhotoDetailsRoutingLogic {
     weak var viewController: STPhotoDetailsViewController?
-    
-    func popViewController() {
-        self.viewController?.navigationController?.popViewController(animated: true)
+        
+    func removeViewController() {
+        if let navigationController = self.viewController?.navigationController {
+            navigationController.popViewController(animated: true)
+        } else {
+            self.viewController?.dismiss(animated: true, completion: nil)
+        }
     }
 }

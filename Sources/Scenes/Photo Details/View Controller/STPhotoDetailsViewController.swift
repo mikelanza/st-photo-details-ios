@@ -82,6 +82,6 @@ public class STPhotoDetailsViewController: UIViewController, STPhotoDetailsDispl
 
 extension STPhotoDetailsViewController: STPhotoDetailsLikesViewDelegate {
     func photoLikesView(view: STPhotoDetailsLikesView?, didSelectBackButton button: UIButton?) {
-        self.router?.popViewController()
+        self.router?.removeViewController()
     }
 }

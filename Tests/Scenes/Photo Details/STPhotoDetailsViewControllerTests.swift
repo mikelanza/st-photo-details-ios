@@ -311,9 +311,9 @@ class STPhotoDetailsViewControllerTests: XCTestCase {
     
     // MARK: - Routing logic tests
     
-    func testPopViewControllerWhenBackButtonIsSelected() {
+    func testRemoveViewControllerWhenBackButtonIsSelected() {
         self.sut.photoLikesView(view: nil, didSelectBackButton: nil)
-        XCTAssertTrue(self.routerSpy.popViewControllerCalled)
+        XCTAssertTrue(self.routerSpy.removeViewControllerCalled)
     }
     
     // MARK: - Business logic tests

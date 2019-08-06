@@ -10,9 +10,9 @@
 import Foundation
 
 class STPhotoDetailsRoutingLogicSpy: NSObject, STPhotoDetailsRoutingLogic {
-    var popViewControllerCalled: Bool = false
-    
-    func popViewController() {
-        self.popViewControllerCalled = true
+    var removeViewControllerCalled: Bool = false
+        
+    func removeViewController() {
+        self.removeViewControllerCalled = true
     }
 }

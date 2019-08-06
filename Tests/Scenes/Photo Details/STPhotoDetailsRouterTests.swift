@@ -11,7 +11,7 @@ import XCTest
 
 class STPhotoDetailsRouterTests: XCTestCase {
     var sut: STPhotoDetailsRouter!
-    var viewController: STPhotoDetailsViewController!
+    var viewController: STPhotoDetailsViewControllerSpy!
     
     // MARK: - Test lifecycle
     
@@ -27,15 +27,20 @@ class STPhotoDetailsRouterTests: XCTestCase {
     private func setupSTPhotoDetailsRouter() {
         self.sut = STPhotoDetailsRouter()
         
-        self.viewController = STPhotoDetailsViewController(photoId: "photoId")
+        self.viewController = STPhotoDetailsViewControllerSpy(photoId: "photoId")
         self.sut.viewController = self.viewController
     }
     
     // MARK: - Tests
     
-    func testPopViewController() {
+    func testRemoveViewControllerWhenThereIsNavigationController() {
         let navigationControllerSpy = UINavigationControllerSpy(rootViewController: self.sut.viewController!)
-        self.sut.popViewController()
+        self.sut.removeViewController()
         XCTAssertTrue(navigationControllerSpy.popViewControllerCalled)
+    }
+    
+    func testRemoveViewControllerWhenThereIsNoNavigationController() {
+        self.sut.removeViewController()
+        XCTAssertTrue(self.viewController.dismissCalled)
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2878447422F9431B00FC56A4 /* STPhotoDetailsViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878447222F942EC00FC56A4 /* STPhotoDetailsViewControllerSpy.swift */; };
 		289647C622F87FB0008664AB /* STPhotoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 289647C522F87FB0008664AB /* STPhotoCore.framework */; };
 		2896486422F8807F008664AB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 289647C922F8807F008664AB /* Localizable.strings */; };
 		2896486522F8807F008664AB /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 289647CB22F8807F008664AB /* Localizable.stringsdict */; };
@@ -155,6 +156,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2878447222F942EC00FC56A4 /* STPhotoDetailsViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STPhotoDetailsViewControllerSpy.swift; sourceTree = "<group>"; };
 		289647C522F87FB0008664AB /* STPhotoCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = STPhotoCore.framework; path = Carthage/Build/iOS/STPhotoCore.framework; sourceTree = "<group>"; };
 		289647CA22F8807F008664AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		289647CC22F8807F008664AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
@@ -930,6 +932,7 @@
 				28E9306222F88812001D5ADB /* STPhotoDetailsWorkerDelegateSpy.swift */,
 				28E9306322F88812001D5ADB /* STPhotoDetailsWorkerSpy.swift */,
 				28E9306422F88812001D5ADB /* STPhotoDetailsDisplayLogicSpy.swift */,
+				2878447222F942EC00FC56A4 /* STPhotoDetailsViewControllerSpy.swift */,
 			);
 			path = "Test Doubles";
 			sourceTree = "<group>";
@@ -1497,6 +1500,7 @@
 				28E9308522F88812001D5ADB /* STPhotoDetailsWorkerDelegateSpy.swift in Sources */,
 				28E9307F22F88812001D5ADB /* STPhotoDetailsRoutingLogicSpy.swift in Sources */,
 				28E9308122F88812001D5ADB /* STPhotoDetailsImageCellInterfaceSpy.swift in Sources */,
+				2878447422F9431B00FC56A4 /* STPhotoDetailsViewControllerSpy.swift in Sources */,
 				28E9307622F88812001D5ADB /* STPhotoDetailsRouterTests.swift in Sources */,
 				28E9308222F88812001D5ADB /* STPhotoDetailsPresentationLogicSpy.swift in Sources */,
 				28E9307022F88812001D5ADB /* UIButtonSpy.swift in Sources */,
