@@ -74,7 +74,7 @@ extension STPhotoDetailsLikesView {
         let padding: CGFloat = 6
         button.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: padding, bottom: 0.0, right: -padding)
         button.contentEdgeInsets = UIEdgeInsets(top: 0.0, left: padding * 2, bottom: 0.0, right: padding * 3)
-        button.layer.cornerRadius = 22
+        button.layer.cornerRadius = 19
         self.addSubview(button)
         self.likesButton = button
     }
@@ -99,7 +99,7 @@ extension STPhotoDetailsLikesView {
     
     private func setupLikesButtonConstraints() {
         NSLayoutConstraint.activate([
-            self.likesButton.heightAnchor.constraint(equalToConstant: 44),
+            self.likesButton.heightAnchor.constraint(equalToConstant: 38),
             self.likesButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             self.likesButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15)
         ])

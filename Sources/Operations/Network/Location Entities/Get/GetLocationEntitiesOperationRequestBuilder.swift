@@ -19,7 +19,7 @@ class GetLocationEntitiesOperationRequestBuilder {
     func request() -> URLRequest {
         let urlString = EndpointsBuilder.shared.getLocationEntitiesEndpoint()
         var urlComponents = URLComponents(string: urlString)!
-        urlComponents.queryItems = self.parameters().map({ URLQueryItem(name: $0.key, value: $0.value) })
+        urlComponents.queryItems = self.parameters().map({ URLQueryItem(name: $0.key, value: "\($0.value)") })
         let url = urlComponents.url!
         
         var request = URLRequest(url: url)
@@ -30,10 +30,10 @@ class GetLocationEntitiesOperationRequestBuilder {
         return request
     }
     
-    private func parameters() -> [String: String] {
+    private func parameters() -> [String: Any] {
         return [
             "apisecret": EndpointsBuilder.apiSecret,
-            "types": self.model.entities.map({ $0.rawValue }).joined(separator: ","),
+            "types": self.model.entities.map({ $0.rawValue }),
             "lat": String(self.model.location.latitude),
             "lng": String(self.model.location.longitude),
             "geom": String(self.model.shouldContainGeometry)

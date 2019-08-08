@@ -76,6 +76,10 @@ public class STPhotoDetailsViewController: UIViewController, STPhotoDetailsDispl
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
+    
+    public override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
 
 // MARK: - Photo likes view delegate

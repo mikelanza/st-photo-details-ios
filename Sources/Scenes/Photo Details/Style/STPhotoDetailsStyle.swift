@@ -50,6 +50,7 @@ class STPhotoDetailsStyle {
         var nameAttributes: [NSAttributedString.Key: Any] {
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.alignment = .right
+            paragraphStyle.lineBreakMode = .byTruncatingTail
             return [
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15),
                 NSAttributedString.Key.foregroundColor: UIColor(hexString: "747E9A"),
