@@ -24,7 +24,7 @@ class GetLocationAddressOperation: AsynchronousOperation {
     override func main() {
         DispatchQueue.global().async {
             let geocoder = CLGeocoder()
-            let location = CLLocation(latitude: self.model.location.latitude, longitude: self.model.location.latitude)
+            let location = CLLocation(latitude: self.model.location.latitude, longitude: self.model.location.longitude)
             geocoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, _) in
                 if let placemark = placemarks?.first {
                     self.successfulResultBlock(address: self.transform(placemark: placemark))
