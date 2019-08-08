@@ -89,10 +89,14 @@ extension STPhotoDetailsInteractor {
 // MARK: - Photo user image
 
 extension STPhotoDetailsInteractor {
+    private func avatarImageSize() -> CGSize {
+        let side: CGFloat = 50 * UIScreen.main.scale
+        return CGSize(width: side, height: side)
+    }
+    
     private func shouldFetchPhotoUserImage() {
         self.presenter?.presentWillFetchPhotoUserImage()
-        // TODO: - Update image url for user image!!!
-        self.worker?.fetchPhotoUserImage(url: nil)
+        self.worker?.fetchPhotoUserImage(url: self.photo.user?.photo?.imageUrl(size: self.avatarImageSize()))
     }
     
     func successDidFetchPhotoUserImage(image: UIImage?) {

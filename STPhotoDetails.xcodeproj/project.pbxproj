@@ -15,7 +15,6 @@
 		2896486722F8807F008664AB /* STComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289647D322F8807F008664AB /* STComment.swift */; };
 		2896486C22F8807F008664AB /* STAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289647DD22F8807F008664AB /* STAddress.swift */; };
 		2896487022F8807F008664AB /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289647E622F8807F008664AB /* UIColor+Hex.swift */; };
-		2896487122F8807F008664AB /* KeyedDecodingContainer+Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289647E822F8807F008664AB /* KeyedDecodingContainer+Wrapper.swift */; };
 		2896487222F8807F008664AB /* Bundle+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289647EA22F8807F008664AB /* Bundle+Module.swift */; };
 		2896487422F8807F008664AB /* STPhotoCommentsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289647EF22F8807F008664AB /* STPhotoCommentsInteractor.swift */; };
 		2896487522F8807F008664AB /* STPhotoCommentsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289647F122F8807F008664AB /* STPhotoCommentsViewCell.swift */; };
@@ -166,7 +165,6 @@
 		289647D322F8807F008664AB /* STComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STComment.swift; sourceTree = "<group>"; };
 		289647DD22F8807F008664AB /* STAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STAddress.swift; sourceTree = "<group>"; };
 		289647E622F8807F008664AB /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
-		289647E822F8807F008664AB /* KeyedDecodingContainer+Wrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+Wrapper.swift"; sourceTree = "<group>"; };
 		289647EA22F8807F008664AB /* Bundle+Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Module.swift"; sourceTree = "<group>"; };
 		289647EF22F8807F008664AB /* STPhotoCommentsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STPhotoCommentsInteractor.swift; sourceTree = "<group>"; };
 		289647F122F8807F008664AB /* STPhotoCommentsViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STPhotoCommentsViewCell.swift; sourceTree = "<group>"; };
@@ -389,7 +387,6 @@
 			isa = PBXGroup;
 			children = (
 				289647E522F8807F008664AB /* UIColor */,
-				289647E722F8807F008664AB /* KeyedDecodingContainer */,
 				289647E922F8807F008664AB /* Bundle */,
 			);
 			path = Extensions;
@@ -401,14 +398,6 @@
 				289647E622F8807F008664AB /* UIColor+Hex.swift */,
 			);
 			path = UIColor;
-			sourceTree = "<group>";
-		};
-		289647E722F8807F008664AB /* KeyedDecodingContainer */ = {
-			isa = PBXGroup;
-			children = (
-				289647E822F8807F008664AB /* KeyedDecodingContainer+Wrapper.swift */,
-			);
-			path = KeyedDecodingContainer;
 			sourceTree = "<group>";
 		};
 		289647E922F8807F008664AB /* Bundle */ = {
@@ -1417,7 +1406,6 @@
 				2896486722F8807F008664AB /* STComment.swift in Sources */,
 				2896487622F8807F008664AB /* STPhotoCommentsPresenter.swift in Sources */,
 				2896487722F8807F008664AB /* STPhotoCommentsStyle.swift in Sources */,
-				2896487122F8807F008664AB /* KeyedDecodingContainer+Wrapper.swift in Sources */,
 				289648AC22F88080008664AB /* ImageServiceProtocol.swift in Sources */,
 				28E9309C22F898D5001D5ADB /* ServiceConfigurator.swift in Sources */,
 				2896488C22F8807F008664AB /* STPhotoDetailsLikesView.swift in Sources */,

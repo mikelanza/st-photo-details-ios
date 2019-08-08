@@ -44,8 +44,7 @@ class GetCommentsOperation: AsynchronousOperation {
             decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601)
             let response = try decoder.decode(GetCommentsOperationModel.Response.self, from: data)
             self.successBlock(response: response)
-        } catch let error {
-            print("Parsing error: \(error)")
+        } catch {
             self.cannotParseResponseErrorBlock()
         }
     }
@@ -53,15 +52,6 @@ class GetCommentsOperation: AsynchronousOperation {
     override func cancel() {
         self.task?.cancel()
         super.cancel()
-    }
-    
-    private func shouldCancelOperation() -> Bool {
-        if self.isCancelled {
-            self.operationCompletionHandler(Result.failure(OperationError.operationCancelled))
-            self.completeOperation()
-            return true
-        }
-        return false
     }
     
     // MARK: - Success

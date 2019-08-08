@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import STPhotoCore
 
 enum GetCommentsOperationModel {
     struct Request {

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import STPhotoCore
 
 struct STCollection: Codable {
     var id: String

@@ -33,7 +33,7 @@ class GetPhotoLocalOperation: AsynchronousOperation {
     }
     
     private func photo(id: String) -> STPhoto {
-        var photo = STPhoto(id: id)
+        let photo = STPhoto(id: id)
         photo.dominantColor = "6eac5d"
         photo.collectionId = "collectionId"
         photo.blockId = 1
@@ -51,7 +51,7 @@ class GetPhotoLocalOperation: AsynchronousOperation {
     }
     
     private func user() -> STUser {
-        var user = STUser(id: "userId")
+        let user = STUser(id: "userId")
         user._firstName = "John"
         user._lastName = "Doe"
         return user

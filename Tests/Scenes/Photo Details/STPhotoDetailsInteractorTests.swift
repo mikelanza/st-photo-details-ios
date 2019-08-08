@@ -155,7 +155,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentWillFetchPhotoCollection() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo.collectionId = "collectionId"
         self.workerSpy.photo = photo
         
@@ -164,7 +164,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskTheWorkerToFetchPhotoCollection() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo.collectionId = "collectionId"
         self.workerSpy.photo = photo
         
@@ -173,7 +173,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentDidFetchPhotoCollection() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo.collectionId = "collectionId"
         self.workerSpy.photo = photo
         
@@ -182,7 +182,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentPhotoCollection() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo.collectionId = "collectionId"
         self.workerSpy.photo = photo
         
@@ -191,7 +191,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentDidFetchPhotoCollectionForFailureCase() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo.collectionId = "collectionId"
         self.workerSpy.photo = photo
         self.workerSpy.shouldFailFetchPhotoCollection = true
@@ -201,7 +201,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterNotToPresentPhotoCollectionForFailureCase() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo.collectionId = "collectionId"
         self.workerSpy.photo = photo
         self.workerSpy.shouldFailFetchPhotoCollection = true
@@ -211,7 +211,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentWillFetchPhotoLocationAddress() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         self.workerSpy.photo = photo
         
@@ -220,7 +220,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskTheWorkerToFetchPhotoLocationAddress() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         self.workerSpy.photo = photo
         
@@ -229,7 +229,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentDidFetchPhotoLocationAddress() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         self.workerSpy.photo = photo
         
@@ -238,7 +238,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentPhotoLocationAddress() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         self.workerSpy.photo = photo
         
@@ -247,7 +247,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentDidFetchPhotoLocationAddressForFailureCase() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         self.workerSpy.photo = photo
         self.workerSpy.shouldFailFetchPhotoLocationAddress = true
@@ -257,7 +257,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterNotToPresentPhotoLocationAddressForFailureCase() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         self.workerSpy.photo = photo
         self.workerSpy.shouldFailFetchPhotoLocationAddress = true
@@ -267,7 +267,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentWillFetchPhotoLocationEntityForBlock() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.blockId = 1
         self.workerSpy.photo = photo
@@ -277,7 +277,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentWillFetchPhotoLocationEntityForNeighborhood() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.neighborhoodId = 1
         self.workerSpy.photo = photo
@@ -287,7 +287,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentWillFetchPhotoLocationEntityForCity() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.cityId = 1
         self.workerSpy.photo = photo
@@ -297,7 +297,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentWillFetchPhotoLocationEntityForCounty() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.countyId = 1
         self.workerSpy.photo = photo
@@ -307,7 +307,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentWillFetchPhotoLocationEntityForState() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.stateId = 1
         self.workerSpy.photo = photo
@@ -317,7 +317,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentWillFetchPhotoLocationEntityForCountry() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.countryId = 1
         self.workerSpy.photo = photo
@@ -327,7 +327,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskTheWorkerToFetchPhotoLocationEntities() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.countryId = 1
         self.workerSpy.photo = photo
@@ -337,7 +337,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentDidFetchPhotoLocationEntityForBlock() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.blockId = 1
         self.workerSpy.photo = photo
@@ -347,7 +347,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentDidFetchPhotoLocationEntityForNeighborhood() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.neighborhoodId = 1
         self.workerSpy.photo = photo
@@ -357,7 +357,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentDidFetchPhotoLocationEntityForCity() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.cityId = 1
         self.workerSpy.photo = photo
@@ -367,7 +367,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentDidFetchPhotoLocationEntityForCounty() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.countyId = 1
         self.workerSpy.photo = photo
@@ -377,7 +377,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentDidFetchPhotoLocationEntityForState() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.stateId = 1
         self.workerSpy.photo = photo
@@ -387,7 +387,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentDidFetchPhotoLocationEntityForCountry() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.countryId = 1
         self.workerSpy.photo = photo
@@ -397,7 +397,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentPhotoLocationEntityForBlock() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.blockId = 1
         self.workerSpy.photo = photo
@@ -408,7 +408,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentPhotoLocationEntityForNeighborhood() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.neighborhoodId = 1
         self.workerSpy.photo = photo
@@ -419,7 +419,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentPhotoLocationEntityForCity() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.cityId = 1
         self.workerSpy.photo = photo
@@ -430,7 +430,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentPhotoLocationEntityForCounty() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.countyId = 1
         self.workerSpy.photo = photo
@@ -441,7 +441,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentPhotoLocationEntityForState() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.stateId = 1
         self.workerSpy.photo = photo
@@ -452,7 +452,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentPhotoLocationEntityForCountry() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.countryId = 1
         self.workerSpy.photo = photo
@@ -470,7 +470,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentDidFetchPhotoLocationEntityForBlockForFailureCase() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.blockId = 1
         self.workerSpy.photo = photo
@@ -481,7 +481,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentDidFetchPhotoLocationEntityForNeighborhoodForFailureCase() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.neighborhoodId = 1
         self.workerSpy.photo = photo
@@ -492,7 +492,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentDidFetchPhotoLocationEntityForCityForFailureCase() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.cityId = 1
         self.workerSpy.photo = photo
@@ -503,7 +503,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentDidFetchPhotoLocationEntityForCountyForFailureCase() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.countyId = 1
         self.workerSpy.photo = photo
@@ -514,7 +514,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentDidFetchPhotoLocationEntityForStateForFailureCase() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.stateId = 1
         self.workerSpy.photo = photo
@@ -525,7 +525,7 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentDidFetchPhotoLocationEntityForCountryForFailureCase() {
-        var photo = STPhoto(id: "photoId")
+        let photo = self.photo()
         photo._location = [27, 47]
         photo.countryId = 1
         self.workerSpy.photo = photo
@@ -543,6 +543,10 @@ class STPhotoDetailsInteractorTests: XCTestCase {
     func testShouldFetchPhotoShouldAskThePresenterToPresentPhotoComments() {
         self.sut.shouldFetchPhoto()
         XCTAssertTrue(self.presenterSpy.presentPhotoCommentsCalled)
+    }
+    
+    private func photo() -> STPhoto {
+        return STPhoto(id: "photoId")
     }
 }
 

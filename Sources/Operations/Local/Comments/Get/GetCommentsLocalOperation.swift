@@ -49,7 +49,7 @@ class GetCommentsLocalOperation: AsynchronousOperation {
     }
     
     private func user(i: Int) -> STUser {
-        var user = STUser(id: "userId\(i)")
+        let user = STUser(id: "userId\(i)")
         user._firstName = Bool.random() ? "John Little Johnny \(i)" : "John \(i)"
         user._lastName = "Doe \(i)"
         return user

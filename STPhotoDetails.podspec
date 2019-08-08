@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
  s.default_subspec = "Core"
  s.subspec "Core" do |ss|
      ss.source_files  = "Sources/**/*.swift"
-     ss.dependency "STPhotoCore", "~> 0.0.9"
+     ss.dependency "STPhotoCore", "~> 0.1.0"
      ss.framework  = "Foundation"
  end
 end

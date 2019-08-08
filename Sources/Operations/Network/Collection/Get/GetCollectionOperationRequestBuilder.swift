@@ -33,7 +33,7 @@ class GetCollectionOperationRequestBuilder {
     private func parameters() -> [String: String] {
         return [
             "apisecret": EndpointsBuilder.apiSecret,
-            "collectionID": String(self.model.collectionId)
+            "collectionID": self.model.collectionId
         ]
     }
 }

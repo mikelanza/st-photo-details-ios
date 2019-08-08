@@ -56,7 +56,7 @@ class STPhotoCommentsPresenter: STPhotoCommentsPresentationLogic {
         displayedComment.name = comment.user?.name ?? ""
         displayedComment.text = comment.text
         displayedComment.time = self.dateFormatter.string(from: comment.createdAt)
-        displayedComment.avatarImageUrl = nil // TODO: - Add image url from user's avatar photo!!!
+        displayedComment.avatarImageUrl = comment.user?.photo?.imageUrl(size: avatarImageSize)
         return displayedComment
     }
     

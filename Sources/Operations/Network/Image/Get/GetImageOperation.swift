@@ -42,15 +42,6 @@ class GetImageOperation: AsynchronousOperation {
         super.cancel()
     }
     
-    private func shouldCancelOperation() -> Bool {
-        if self.isCancelled {
-            self.operationCompletionHandler(Result.failure(OperationError.operationCancelled))
-            self.completeOperation()
-            return true
-        }
-        return false
-    }
-    
     // MARK: - Success
     
     private func successBlock(response: GetImageOperationModel.Response) {
@@ -67,18 +58,6 @@ class GetImageOperation: AsynchronousOperation {
     
     private func noDataAvailableErrorBlock() {
         self.operationCompletionHandler(Result.failure(OperationError.noDataAvailable))
-        self.completeOperation()
-    }
-    
-    private func cannotParseResponseErrorBlock() {
-        self.operationCompletionHandler(Result.failure(OperationError.cannotParseResponse))
-        self.completeOperation()
-    }
-    
-    // MARK: - Server errors
-    
-    private func responseErrorBlock(error: Error) {
-        self.operationCompletionHandler(Result.failure(OperationError.error(message: error.localizedDescription)))
         self.completeOperation()
     }
 }
