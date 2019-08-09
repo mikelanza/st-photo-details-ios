@@ -23,8 +23,8 @@ class STPhotoDetailsStyle {
     }
     
     struct PhotoLikesViewModel {
-        var backButtonImage: UIImage = UIImage(named: "back_arrow_circle", in: Bundle.module, compatibleWith: nil)!
-        var likesButtonImage: UIImage = UIImage(named: "white_heart", in: Bundle.module, compatibleWith: nil)!
+        var backButtonImage: UIImage = UIImage(named: "st_photo_details_back_arrow_circle", in: Bundle.module, compatibleWith: nil)!
+        var likesButtonImage: UIImage = UIImage(named: "st_photo_details_white_heart", in: Bundle.module, compatibleWith: nil)!
         var likesButtonBackgroundColor: UIColor = UIColor(red: 54/255, green: 62/255, blue: 75/255, alpha: 1)
         var likesButtonTextAttributes: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15),
@@ -33,14 +33,14 @@ class STPhotoDetailsStyle {
     }
     
     struct PhotoEntityCellModel {
-        var collectionImage: UIImage = UIImage(named: "collection_gray", in: Bundle.module, compatibleWith: nil)!
-        var locationImage: UIImage = UIImage(named: "location_gray", in: Bundle.module, compatibleWith: nil)!
-        var blockImage: UIImage = UIImage(named: "block_gray", in: Bundle.module, compatibleWith: nil)!
-        var neighborhoodImage: UIImage = UIImage(named: "neighborhood_gray", in: Bundle.module, compatibleWith: nil)!
-        var cityImage: UIImage = UIImage(named: "city_gray", in: Bundle.module, compatibleWith: nil)!
-        var countyImage: UIImage = UIImage(named: "county_gray", in: Bundle.module, compatibleWith: nil)!
-        var stateImage: UIImage = UIImage(named: "state_gray", in: Bundle.module, compatibleWith: nil)!
-        var countryImage: UIImage = UIImage(named: "country_gray", in: Bundle.module, compatibleWith: nil)!
+        var collectionImage: UIImage = UIImage(named: "st_photo_details_collection_gray", in: Bundle.module, compatibleWith: nil)!
+        var locationImage: UIImage = UIImage(named: "st_photo_details_location_gray", in: Bundle.module, compatibleWith: nil)!
+        var blockImage: UIImage = UIImage(named: "st_photo_details_block_gray", in: Bundle.module, compatibleWith: nil)!
+        var neighborhoodImage: UIImage = UIImage(named: "st_photo_details_neighborhood_gray", in: Bundle.module, compatibleWith: nil)!
+        var cityImage: UIImage = UIImage(named: "st_photo_details_city_gray", in: Bundle.module, compatibleWith: nil)!
+        var countyImage: UIImage = UIImage(named: "st_photo_details_county_gray", in: Bundle.module, compatibleWith: nil)!
+        var stateImage: UIImage = UIImage(named: "st_photo_details_state_gray", in: Bundle.module, compatibleWith: nil)!
+        var countryImage: UIImage = UIImage(named: "st_photo_details_country_gray", in: Bundle.module, compatibleWith: nil)!
         
         var titleAttributes: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14),
@@ -63,7 +63,7 @@ class STPhotoDetailsStyle {
     }
     
     struct PhotoDetailsCellModel {
-        var avatarPlaceholderImage: UIImage = UIImage(named: "avatar", in: Bundle.module, compatibleWith: nil)!
+        var avatarPlaceholderImage: UIImage = UIImage(named: "st_photo_details_avatar", in: Bundle.module, compatibleWith: nil)!
         
         var nameAttributes: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16),

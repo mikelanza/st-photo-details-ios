@@ -27,7 +27,7 @@ class GetImageLocalOperation: AsynchronousOperation {
             if self.shouldFail {
                 self.noDataAvailableErrorBlock()
             } else {
-                self.successBlock(response: GetImageOperationModel.Response(image: UIImage(named: "watch", in: Bundle.module, compatibleWith: nil)))
+                self.successBlock(response: GetImageOperationModel.Response(image: UIImage(named: "st_photo_details_watch", in: Bundle.module, compatibleWith: nil)))
             }
         }
     }
