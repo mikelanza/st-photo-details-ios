@@ -47,9 +47,11 @@ class STPhotoCommentsInteractor: STPhotoCommentsBusinessLogic {
     }
     
     func shouldFetchAvatarImage(request: STPhotoComments.FetchAvatarImage.Request) {
-        if request.displayedComment.avatarImage == nil && !request.displayedComment.isLoadingUserImage {
+        if request.displayedComment.avatarImageUrl != nil && request.displayedComment.avatarImage == nil && !request.displayedComment.isLoadingUserImage {
             self.presenter?.presentWillFetchAvatarImage(response: STPhotoComments.FetchAvatarImage.Response(displayedComment: request.displayedComment))
             self.worker?.fetchAvatarImage(displayedComment: request.displayedComment)
+        } else if request.displayedComment.avatarImageUrl == nil && request.displayedComment.avatarImage == nil {
+            self.presenter?.presentAvatarImage(response: STPhotoComments.PresentAvatarImage.Response(displayedComment: request.displayedComment, image: STPhotoCommentsStyle.shared.commentsViewCellModel.avatarPlaceholderImage))
         }
     }
 }
@@ -86,7 +88,7 @@ extension STPhotoCommentsInteractor: STPhotoCommentsWorkerDelegate {
     }
     
     func failureDidFetchPhotoComments(error: OperationError) {
-        
+        self.paginationModel.isFetchingItems = false
     }
     
     func successDidFetchAvatarImage(image: UIImage?, displayedComment: STPhotoComments.DisplayedComment) {
@@ -96,5 +98,6 @@ extension STPhotoCommentsInteractor: STPhotoCommentsWorkerDelegate {
     
     func failureDidFetchAvatarImage(displayedComment: STPhotoComments.DisplayedComment, error: OperationError) {
         self.presenter?.presentDidFetchAvatarImage(response: STPhotoComments.FetchAvatarImage.Response(displayedComment: displayedComment))
+        self.presenter?.presentAvatarImage(response: STPhotoComments.PresentAvatarImage.Response(displayedComment: displayedComment, image: STPhotoCommentsStyle.shared.commentsViewCellModel.avatarPlaceholderImage))
     }
 }

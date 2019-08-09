@@ -61,6 +61,8 @@ class STPhotoCommentsStyle {
     }
     
     struct CommentsViewCellModel {
+        var avatarPlaceholderImage: UIImage = UIImage(named: "avatar", in: Bundle.module, compatibleWith: nil)!
+        
         var separatorColor: UIColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1.0)
         
         var nameAttributes: [NSAttributedString.Key: Any] = [

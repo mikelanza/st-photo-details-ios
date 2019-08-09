@@ -146,10 +146,17 @@ class STPhotoCommentsInteractorTests: XCTestCase {
         XCTAssertFalse(self.presenterSpy.presentEmptyStateCalled)
     }
     
-    func testShouldFetchAvatarImageShouldAskThePresenterToPresentWillFetchAvatarImageWhenThereIsImageUrlAndNoImage() {
+    func testShouldFetchPhotoCommentsShouldUpdatePaginationModelIsFetchingItemsForFailureCase() {
+        self.workerSpy.shouldFailFetchPhotoComments = true
+        self.sut.shouldFetchPhotoComments()
+        XCTAssertFalse(self.sut.paginationModel.isFetchingItems)
+    }
+    
+    func testShouldFetchAvatarImageShouldAskThePresenterToPresentWillFetchAvatarImageWhenThereIsImageUrlAndNoImageAndIsNotLoading() {
         let displayedComment = STPhotoComments.DisplayedComment(id: "commentId")
         displayedComment.avatarImageUrl = "https://streetography.com"
         displayedComment.avatarImage = nil
+        displayedComment.isLoadingUserImage = false
         self.sut.shouldFetchAvatarImage(request: STPhotoComments.FetchAvatarImage.Request(displayedComment: displayedComment))
         XCTAssertTrue(self.presenterSpy.presentWillFetchAvatarImageCalled)
     }
@@ -181,10 +188,11 @@ class STPhotoCommentsInteractorTests: XCTestCase {
         XCTAssertFalse(self.workerSpy.fetchAvatarImageCalled)
     }
     
-    func testShouldFetchAvatarImageShouldAskThePresenterToPresentDidFetchAvatarImageWhenThereIsImageUrlAndNoImage() {
+    func testShouldFetchAvatarImageShouldAskThePresenterToPresentDidFetchAvatarImageWhenThereIsImageUrlAndNoImageAndIsNotLoading() {
         let displayedComment = STPhotoComments.DisplayedComment(id: "commentId")
         displayedComment.avatarImageUrl = "https://streetography.com"
         displayedComment.avatarImage = nil
+        displayedComment.isLoadingUserImage = false
         self.sut.shouldFetchAvatarImage(request: STPhotoComments.FetchAvatarImage.Request(displayedComment: displayedComment))
         XCTAssertTrue(self.presenterSpy.presentDidFetchAvatarImageCalled)
     }
@@ -212,6 +220,14 @@ class STPhotoCommentsInteractorTests: XCTestCase {
         displayedComment.avatarImageUrl = "https://streetography.com"
         displayedComment.avatarImage = nil
         self.sut.shouldFetchAvatarImage(request: STPhotoComments.FetchAvatarImage.Request(displayedComment: displayedComment))
-        XCTAssertFalse(self.presenterSpy.presentAvatarImageCalled)
+        XCTAssertTrue(self.presenterSpy.presentAvatarImageCalled)
+    }
+    
+    func testShouldFetchAvatarImageShouldAskThePresenterToPresentAvatarImageWithPlaceholderWhenThereIsNoImageUrlAndNoImage() {
+        let displayedComment = STPhotoComments.DisplayedComment(id: "commentId")
+        displayedComment.avatarImageUrl = nil
+        displayedComment.avatarImage = nil
+        self.sut.shouldFetchAvatarImage(request: STPhotoComments.FetchAvatarImage.Request(displayedComment: displayedComment))
+        XCTAssertTrue(self.presenterSpy.presentAvatarImageCalled)
     }
 }
