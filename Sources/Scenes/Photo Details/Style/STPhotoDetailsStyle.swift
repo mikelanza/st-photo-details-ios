@@ -63,7 +63,7 @@ class STPhotoDetailsStyle {
     }
     
     struct PhotoDetailsCellModel {
-        var avatarPlaceholderImage: UIImage = UIImage()
+        var avatarPlaceholderImage: UIImage = UIImage(named: "avatar", in: Bundle.module, compatibleWith: nil)!
         
         var nameAttributes: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16),

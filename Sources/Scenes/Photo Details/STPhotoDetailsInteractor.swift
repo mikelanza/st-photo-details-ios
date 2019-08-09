@@ -95,8 +95,12 @@ extension STPhotoDetailsInteractor {
     }
     
     private func shouldFetchPhotoUserImage() {
-        self.presenter?.presentWillFetchPhotoUserImage()
-        self.worker?.fetchPhotoUserImage(url: self.photo.user?.photo?.imageUrl(size: self.avatarImageSize()))
+        if let url = self.photo.user?.photo?.imageUrl(size: self.avatarImageSize()) {
+            self.presenter?.presentWillFetchPhotoUserImage()
+            self.worker?.fetchPhotoUserImage(url: url)
+        } else {
+            self.presenter?.presentPhotoUserImage(response: STPhotoDetails.PresentPhotoUserImage.Response(image: STPhotoDetailsStyle.shared.photoDetailsCellModel.avatarPlaceholderImage))
+        }
     }
     
     func successDidFetchPhotoUserImage(image: UIImage?) {
@@ -106,6 +110,7 @@ extension STPhotoDetailsInteractor {
     
     func failureDidFetchPhotoUserImage(error: OperationError) {
         self.presenter?.presentDidFetchPhotoUserImage()
+        self.presenter?.presentPhotoUserImage(response: STPhotoDetails.PresentPhotoUserImage.Response(image: STPhotoDetailsStyle.shared.photoDetailsCellModel.avatarPlaceholderImage))
     }
 }
 

@@ -122,36 +122,56 @@ class STPhotoDetailsInteractorTests: XCTestCase {
         XCTAssertFalse(self.presenterSpy.presentPhotoImageCalled)
     }
     
-    func testShouldFetchPhotoShouldAskThePresenterToPresentWillFetchPhotoUserImage() {
+    func testShouldFetchPhotoShouldAskThePresenterToPresentWillFetchPhotoUserImageIfThereIsPhotoUserImageUrl() {
+        self.workerSpy.photo = self.photoWithUser()
         self.sut.shouldFetchPhoto()
         XCTAssertTrue(self.presenterSpy.presentWillFetchPhotoUserImageCalled)
     }
     
-    func testShouldFetchPhotoShouldAskTheWorkerToFetchPhotoUserImage() {
+    func testShouldFetchPhotoShouldAskTheWorkerToFetchPhotoUserImageIfThereIsPhotoUserImageUrl() {
+        self.workerSpy.photo = self.photoWithUser()
         self.sut.shouldFetchPhoto()
         XCTAssertTrue(self.workerSpy.fetchPhotoUserImageCalled)
     }
     
-    func testShouldFetchPhotoShouldAskThePresenterToPresentDidFetchPhotoUserImage() {
+    func testShouldFetchPhotoShouldAskThePresenterToPresentDidFetchPhotoUserImageIfThereIsPhotoUserImageUrl() {
+        self.workerSpy.photo = self.photoWithUser()
         self.sut.shouldFetchPhoto()
         XCTAssertTrue(self.presenterSpy.presentDidFetchPhotoUserImageCalled)
     }
     
-    func testShouldFetchPhotoShouldAskThePresenterToPresentPhotoUserImage() {
+    func testShouldFetchPhotoShouldAskThePresenterToPresentPhotoUserImageIfThereIsPhotoUserImageUrl() {
+        self.workerSpy.photo = self.photoWithUser()
         self.sut.shouldFetchPhoto()
         XCTAssertTrue(self.presenterSpy.presentPhotoUserImageCalled)
     }
     
-    func testShouldFetchPhotoShouldAskThePresenterToPresentDidFetchPhotoUserImageForFailureCase() {
+    func testShouldFetchPhotoShouldAskThePresenterToPresentPlaceholderPhotoUserImageIfThereIsNoPhotoUserImageUrl() {
+        self.sut.shouldFetchPhoto()
+        XCTAssertTrue(self.presenterSpy.presentPhotoUserImageCalled)
+    }
+    
+    func testShouldFetchPhotoShouldAskThePresenterToPresentDidFetchPhotoUserImageForFailureCaseIfThereIsPhotoUserImageUrl() {
+        self.workerSpy.photo = self.photoWithUser()
         self.workerSpy.shouldFailFetchPhotoUserImage = true
         self.sut.shouldFetchPhoto()
         XCTAssertTrue(self.presenterSpy.presentDidFetchPhotoUserImageCalled)
     }
     
-    func testShouldFetchPhotoShouldAskThePresenterNotToPresentPhotoUserImageForFailureCase() {
+    func testShouldFetchPhotoShouldAskThePresenterToPresentPlaceholderForPhotoUserImageForFailureCase() {
         self.workerSpy.shouldFailFetchPhotoUserImage = true
         self.sut.shouldFetchPhoto()
-        XCTAssertFalse(self.presenterSpy.presentPhotoUserImageCalled)
+        XCTAssertTrue(self.presenterSpy.presentPhotoUserImageCalled)
+    }
+    
+    private func photoWithUser() -> STPhoto {
+        let photo = self.photo()
+        let user = STUser(id: "userId")
+        let userPhoto = STPhoto(id: "id")
+        userPhoto.imageUrl = "https://streetography.com"
+        user.photo = userPhoto
+        photo.user = user
+        return photo
     }
     
     func testShouldFetchPhotoShouldAskThePresenterToPresentWillFetchPhotoCollection() {
