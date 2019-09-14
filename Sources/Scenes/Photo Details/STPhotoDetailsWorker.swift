@@ -36,18 +36,18 @@ protocol STPhotoDetailsWorkerDelegate: class {
 class STPhotoDetailsWorker {
     weak var delegate: STPhotoDetailsWorkerDelegate?
     
-    var photoService: PhotoServiceProtocol = ServiceConfigurator.shared.photoService()
-    var imageService: ImageServiceProtocol = ServiceConfigurator.shared.imageService()
-    var photoCollectionService: PhotoCollectionServiceProtocol = ServiceConfigurator.shared.photoCollectionService()
-    var locationAddressService: LocationAddressServiceProtocol = ServiceConfigurator.shared.locationAddressService()
-    var locationEntitiesService: LocationEntitiesServiceProtocol = ServiceConfigurator.shared.locationEntitiesService()
+    var photoTask: PhotoTaskProtocol = TaskConfigurator.shared.photoTask()
+    var imageTask: ImageTaskProtocol = TaskConfigurator.shared.imageTask()
+    var photoCollectionTask: PhotoCollectionTaskProtocol = TaskConfigurator.shared.photoCollectionTask()
+    var locationAddressTask: LocationAddressTaskProtocol = TaskConfigurator.shared.locationAddressTask()
+    var locationEntitiesTask: LocationEntitiesTaskProtocol = TaskConfigurator.shared.locationEntitiesTask()
     
     init(delegate: STPhotoDetailsWorkerDelegate?) {
         self.delegate = delegate
     }
     
     func fetchPhoto(photoId: String) {
-        self.photoService.fetchPhoto(photoId: photoId) { result in
+        self.photoTask.fetchPhoto(photoId: photoId) { result in
             switch result {
                 case .success(let photo): self.delegate?.successDidFetchPhoto(photo: photo); break
                 case .failure(let error): self.delegate?.failureDidFetchPhoto(error: error); break
@@ -56,7 +56,7 @@ class STPhotoDetailsWorker {
     }
     
     func fetchPhotoImage(url: String?) {
-        self.imageService.fetchImage(url: url) { result in
+        self.imageTask.fetchImage(url: url) { result in
             switch result {
                 case .success(let image): self.delegate?.successDidFetchPhotoImage(image: image); break
                 case .failure(let error): self.delegate?.failureDidFetchPhotoImage(error: error); break
@@ -65,7 +65,7 @@ class STPhotoDetailsWorker {
     }
     
     func fetchPhotoUserImage(url: String?) {
-        self.imageService.fetchImage(url: url) { result in
+        self.imageTask.fetchImage(url: url) { result in
             switch result {
                 case .success(let image): self.delegate?.successDidFetchPhotoUserImage(image: image); break
                 case .failure(let error): self.delegate?.failureDidFetchPhotoUserImage(error: error); break
@@ -74,7 +74,7 @@ class STPhotoDetailsWorker {
     }
     
     func fetchPhotoCollection(id: String) {
-        self.photoCollectionService.fetchPhotoCollection(collectionId: id) { result in
+        self.photoCollectionTask.fetchPhotoCollection(collectionId: id) { result in
             switch result {
                 case .success(let collection): self.delegate?.successDidFetchPhotoCollection(collection: collection); break
                 case .failure(let error): self.delegate?.failureDidFetchPhotoCollection(error: error); break
@@ -83,7 +83,7 @@ class STPhotoDetailsWorker {
     }
     
     func fetchPhotoLocationAddress(location: STLocation) {
-        self.locationAddressService.fetchLocationAddress(location: location) { result in
+        self.locationAddressTask.fetchLocationAddress(location: location) { result in
             switch result {
                 case .success(let address): self.delegate?.successDidFetchLocationAddress(address: address); break
                 case .failure(let error): self.delegate?.failureDidFetchLocationAddress(error: error); break
@@ -92,7 +92,7 @@ class STPhotoDetailsWorker {
     }
     
     func fetchPhotoLocationEntities(location: STLocation) {
-        self.locationEntitiesService.fetchPhotoEntities(location: location) { result in
+        self.locationEntitiesTask.fetchPhotoEntities(location: location) { result in
             switch result {
                 case .success(let entities): self.delegate?.successDidFetchPhotoLocationEntities(entities: entities); break
                 case .failure(let error): self.delegate?.failureDidFetchPhotoLocationEntities(error: error); break

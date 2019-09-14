@@ -1,15 +1,15 @@
 //
-//  LocationEntitiesLocalServiceSpy.swift
-//  STPhotoDetailsTests
+//  LocationEntitiesLocalTaskSpy.swift
+//  STPhotoDetailsTests-iOS
 //
-//  Created by Dimitri Strauneanu on 05/08/2019.
-//  Copyright © 2019 Streetography. All rights reserved.
+//  Created by Dimitri Strauneanu on 14/09/2019.
+//  Copyright © 2019 mikelanza. All rights reserved.
 //
 
 @testable import STPhotoDetails
 import STPhotoCore
 
-class LocationEntitiesLocalServiceSpy: LocationEntitiesLocalService {
+class LocationEntitiesLocalTaskSpy: LocationEntitiesLocalTask {
     var fetchPhotoEntitiesCalled: Bool = false
     var shouldFailFetchPhotoEntities: Bool = false
     

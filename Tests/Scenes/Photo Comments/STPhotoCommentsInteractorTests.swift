@@ -11,6 +11,7 @@
 //
 
 @testable import STPhotoDetails
+import STPhotoCore
 import XCTest
 
 class STPhotoCommentsInteractorTests: XCTestCase {

@@ -1,15 +1,15 @@
 //
-//  LocationAddressLocalServiceSpy.swift
-//  STPhotoDetailsTests
+//  LocationAddressLocalTaskSpy.swift
+//  STPhotoDetailsTests-iOS
 //
-//  Created by Dimitri Strauneanu on 04/08/2019.
-//  Copyright © 2019 Streetography. All rights reserved.
+//  Created by Dimitri Strauneanu on 14/09/2019.
+//  Copyright © 2019 mikelanza. All rights reserved.
 //
 
 @testable import STPhotoDetails
 import STPhotoCore
 
-class LocationAddressLocalServiceSpy: LocationAddressLocalService {
+class LocationAddressLocalTaskSpy: LocationAddressLocalTask {
     var address: STAddress = STAddress()
     var fetchLocationAddressCalled: Bool = false
     var shouldFailFetchLocationAddress: Bool = false

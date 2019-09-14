@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import STPhotoCore
 
 protocol STPhotoCommentsPresentationLogic {
     func presentWillFetchPhotoComments()
