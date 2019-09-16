@@ -4,7 +4,7 @@
 //  STPhotoDetails
 //
 //  Created by Streetography on 01/04/19.
-//  Copyright © 2019 mikelanza. All rights reserved.
+//  Copyright © 2019 Streetography. All rights reserved.
 //
 
 import PackageDescription
@@ -23,7 +23,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(url: "https://github.com/mikelanza/st-photo-core-ios.git", .upToNextMajor(from: "0.1.3"))
+        .package(url: "https://github.com/mikelanza/st-photo-core-ios.git", .upToNextMajor(from: "0.1.4"))
     ],
     targets: [
         .target(

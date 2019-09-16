@@ -39,45 +39,45 @@ class STPhotoCommentsWorkerTests: XCTestCase {
     // MARK: - Tests
     
     func testFetchPhotoComments() {
-        let serviceSpy = PhotoCommentsLocalServiceSpy()
-        self.sut.photoCommentsService = serviceSpy
+        let spy = PhotoCommentsLocalTaskSpy()
+        self.sut.photoCommentsTask = spy
         
         self.sut.fetchPhotoComments(photoId: "photoId", page: 0, limit: 0)
-        XCTAssertTrue(serviceSpy.fetchPhotoCommentsCalled)
+        XCTAssertTrue(spy.fetchPhotoCommentsCalled)
     }
     
     func testFetchPhotoCommentsShouldAskTheDelegateToSendCommentsForSuccessCase() {
-        let serviceSpy = PhotoCommentsLocalServiceSpy()
-        serviceSpy.shouldFailFetchPhotoComments = false
-        self.sut.photoCommentsService = serviceSpy
+        let spy = PhotoCommentsLocalTaskSpy()
+        spy.shouldFailFetchPhotoComments = false
+        self.sut.photoCommentsTask = spy
         
         self.sut.fetchPhotoComments(photoId: "photoId", page: 0, limit: 0)
         XCTAssertTrue(self.delegateSpy.successDidFetchPhotoCommentsCalled)
     }
     
     func testFetchPhotoCommentsShouldAskTheDelegateToSendErrorForFailureCase() {
-        let serviceSpy = PhotoCommentsLocalServiceSpy()
-        serviceSpy.shouldFailFetchPhotoComments = true
-        self.sut.photoCommentsService = serviceSpy
+        let spy = PhotoCommentsLocalTaskSpy()
+        spy.shouldFailFetchPhotoComments = true
+        self.sut.photoCommentsTask = spy
         
         self.sut.fetchPhotoComments(photoId: "photoId", page: 0, limit: 0)
         XCTAssertTrue(self.delegateSpy.failureDidFetchPhotoCommentsCalled)
     }
     
     func testFetchAvatarImage() {
-        let serviceSpy = ImageLocalServiceSpy()
-        self.sut.imageService = serviceSpy
+        let spy = ImageLocalTaskSpy()
+        self.sut.imageTask = spy
         
         let displayedComment = STPhotoComments.DisplayedComment(id: "id")
         displayedComment.avatarImageUrl = "https://streetography.com"
         self.sut.fetchAvatarImage(displayedComment: displayedComment)
-        XCTAssertTrue(serviceSpy.fetchImageCalled)
+        XCTAssertTrue(spy.fetchImageCalled)
     }
     
     func testFetchAvatarImageShouldAskTheDelegateToSendImageForSuccessCase() {
-        let serviceSpy = ImageLocalServiceSpy()
-        serviceSpy.shouldFailFetchImage = false
-        self.sut.imageService = serviceSpy
+        let spy = ImageLocalTaskSpy()
+        spy.shouldFailFetchImage = false
+        self.sut.imageTask = spy
         
         let displayedComment = STPhotoComments.DisplayedComment(id: "id")
         displayedComment.avatarImageUrl = "https://streetography.com"
@@ -86,9 +86,9 @@ class STPhotoCommentsWorkerTests: XCTestCase {
     }
     
     func testFetchAvatarImageShouldAskTheDelegateToSendErrorForFailureCase() {
-        let serviceSpy = ImageLocalServiceSpy()
-        serviceSpy.shouldFailFetchImage = true
-        self.sut.imageService = serviceSpy
+        let spy = ImageLocalTaskSpy()
+        spy.shouldFailFetchImage = true
+        self.sut.imageTask = spy
         
         let displayedComment = STPhotoComments.DisplayedComment(id: "id")
         displayedComment.avatarImageUrl = "https://streetography.com"

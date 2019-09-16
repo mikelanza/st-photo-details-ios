@@ -24,15 +24,16 @@ protocol STPhotoCommentsWorkerDelegate: class {
 class STPhotoCommentsWorker {
     weak var delegate: STPhotoCommentsWorkerDelegate?
     
-    var photoCommentsService: PhotoCommentsServiceProtocol = ServiceConfigurator.shared.photoCommentsService()
-    var imageService: ImageServiceProtocol = ServiceConfigurator.shared.imageService()
+    var photoCommentsTask: PhotoCommentsTaskProtocol = TaskConfigurator.shared.photoCommentsTask()
+    var imageTask: ImageTaskProtocol = TaskConfigurator.shared.imageTask()
     
     init(delegate: STPhotoCommentsWorkerDelegate?) {
         self.delegate = delegate
     }
     
     func fetchPhotoComments(photoId: String, page: Int, limit: Int) {
-        self.photoCommentsService.fetchPhotoComments(photoId: photoId, page: page, limit: limit, completionHandler: { result in
+        let model = PhotoCommentsTaskModel.Fetch(photoId: photoId, page: page, limit: limit)
+        self.photoCommentsTask.fetchPhotoComments(model: model, completionHandler: { result in
             switch result {
                 case .success(let comments): self.delegate?.successDidFetchPhotoComments(comments: comments); break
                 case .failure(let error): self.delegate?.failureDidFetchPhotoComments(error: error); break
@@ -41,7 +42,7 @@ class STPhotoCommentsWorker {
     }
     
     func fetchAvatarImage(displayedComment: STPhotoComments.DisplayedComment) {
-        self.imageService.fetchImage(url: displayedComment.avatarImageUrl) { result in
+        self.imageTask.fetchImage(url: displayedComment.avatarImageUrl) { result in
             switch result {
                 case .success(let image): self.delegate?.successDidFetchAvatarImage(image: image, displayedComment: displayedComment); break
                 case .failure(let error): self.delegate?.failureDidFetchAvatarImage(displayedComment: displayedComment, error: error); break
