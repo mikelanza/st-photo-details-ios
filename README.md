@@ -1,21 +1,21 @@
-# STPhotoDetails
+# STPhotoDetails - iOS
 
-[![Platforms](https://img.shields.io/cocoapods/p/STPhotoDetails.svg)](https://cocoapods.org/pods/STPhotoDetails)
-[![License](https://img.shields.io/cocoapods/l/STPhotoDetails.svg)](https://raw.githubusercontent.com/mikelanza/st-photo-details-ios/master/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/mikelanza/st-photo-details-ios/blob/master/LICENSE)
 
 [![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![CocoaPods compatible](https://img.shields.io/cocoapods/v/STPhotoDetails.svg)](https://cocoapods.org/pods/STPhotoDetails)
 
-[![Travis](https://img.shields.io/travis/mikelanza/st-photo-details-ios/master.svg)](https://travis-ci.org/mikelanza/st-photo-details-ios/branches)
-[![SwiftFrameworkTemplate](https://img.shields.io/badge/SwiftFramework-Template-red.svg)](http://github.com/RahulKatariya/SwiftFrameworkTemplate)
+**STPhotoDetails** is an iOS framework designed to display details of photos from [Streetography](https://streetography.com). It is used in the [STPhotoMap - iOS](https://github.com/mikelanza/st-photo-map-ios) framework.
 
-Photo details for Streetography
-
+- [Screenshots](#screenshots)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
+
+## Screenshots
+
+<img src="https://user-images.githubusercontent.com/6670019/65861801-9dd26180-e375-11e9-97bb-292ea710d797.png" width="50%"></img> 
 
 ## Requirements
 
@@ -34,14 +34,14 @@ Photo details for Streetography
 $ gem install cocoapods
 ```
 
-To integrate STPhotoDetails into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate **STPhotoDetails** into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '10.0'
 use_frameworks!
 
-pod 'STPhotoDetails', '~> 0.0.1'
+pod 'STPhotoDetails', '~> 0.1.0'
 ```
 
 Then, run the following command:
@@ -64,10 +64,10 @@ $ brew update
 $ brew install carthage
 ```
 
-To integrate STPhotoDetails into your Xcode project using Carthage, specify it in your `Cartfile`:
+To integrate **STPhotoDetails** into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "mikelanza/st-photo-details-ios" ~> 0.0.1
+github "mikelanza/st-photo-details-ios" ~> 0.1.0
 ```
 
 </details>
@@ -75,17 +75,17 @@ github "mikelanza/st-photo-details-ios" ~> 0.0.1
 <details>
   <summary><strong>Swift Package Manager</strong></summary>
 
-To use STPhotoDetails as a [Swift Package Manager](https://swift.org/package-manager/) package just add the following in your Package.swift file.
+To use **STPhotoDetails** as a [Swift Package Manager](https://swift.org/package-manager/) package just add the following in your Package.swift file.
 
 ``` swift
-// swift-tools-version:4.2
+// swift-tools-version:5.0
 
 import PackageDescription
 
 let package = Package(
     name: "HelloSTPhotoDetails",
     dependencies: [
-        .package(url: "https://github.com/mikelanza/st-photo-details-ios.git", .upToNextMajor(from: "0.0.1"))
+        .package(url: "https://github.com/mikelanza/st-photo-details-ios.git", .upToNextMajor(from: "0.1.0"))
     ],
     targets: [
         .target(name: "HelloSTPhotoDetails", dependencies: ["STPhotoDetails"])
@@ -96,7 +96,7 @@ let package = Package(
 
 ### Manually
 
-If you prefer not to use either of the aforementioned dependency managers, you can integrate STPhotoDetails into your project manually.
+If you prefer not to use either of the aforementioned dependency managers, you can integrate **STPhotoDetails** into your project manually.
 
 <details>
   <summary><strong>Git Submodules</strong></summary><p>
@@ -107,7 +107,7 @@ If you prefer not to use either of the aforementioned dependency managers, you c
 $ git init
 ```
 
-- Add STPhotoDetails as a git [submodule](http://git-scm.com/docs/git-submodule) by running the following command:
+- Add **STPhotoDetails** as a git [submodule](http://git-scm.com/docs/git-submodule) by running the following command:
 
 ```bash
 $ git submodule add https://github.com/mikelanza/st-photo-details-ios.git
@@ -148,14 +148,16 @@ $ git submodule update --init --recursive
 
 ## Usage
 
+See the [STPhotoMap - iOS](https://github.com/mikelanza/st-photo-map-ios) framework for usage.
+
 ## Contributing
 
 Issues and pull requests are welcome!
 
 ## Author
 
-[@Streetography](https://streetography.com)
+[Streetography](https://streetography.com)
 
 ## License
 
-STPhotoDetails is released under the MIT license. See [LICENSE](https://github.com/mikelanza/st-photo-details-ios/blob/master/LICENSE) for details.
+**STPhotoDetails** is released under the MIT license. See [LICENSE](https://github.com/mikelanza/st-photo-details-ios/blob/master/LICENSE) for details.
